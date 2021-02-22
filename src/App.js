@@ -11,6 +11,8 @@ import Clarifai from "clarifai";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import "tachyons";
 import Register from "./components/Register/Register";
+import Footer from "./components/Footer/Footer";
+
 
 const app = new Clarifai.App({
   apiKey: "c171543d0ea649da9e3c3ae3f8e3e091",
@@ -135,6 +137,7 @@ class App extends Component {
 
       
         }
+        <Footer/>
     </div>
     )
   };}
