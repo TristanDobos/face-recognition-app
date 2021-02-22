@@ -1,36 +1,48 @@
 import React from "react";
-
+import { Section,
+        Main,
+        Fieldset,
+        Legend,
+        DataName,
+        InputData,
+        SubmitButton,
+        RegisterButton } from "./Signin.styles";
+ 
 const Signin = ({onRouteChange}) => {
     return (
-        <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center signin">
-        <main className="pa4 black-80">
+        <Section>
+        <Main>
         <div className="measure ">
-            <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f4 fw6 ph0 mh0">Sign In</legend>
+            <Fieldset id="sign_up" >
+            <Legend >Sign In</Legend>
             <div className="mt3">
-                <label className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
-                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address"/>
+                <DataName htmlFor="email-address">Email</DataName>
+                <InputData type="email" name="email-address"  id="email-address"/>
             </div>
             <div className="mv3">
-                <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
-                <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password"/>
+                <DataName htmlFor="password">Password</DataName>
+                <InputData type="password" name="password"  id="password"/>
             </div>
  
-            </fieldset>
+            </Fieldset>
             <div className="center">
-            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+            <SubmitButton
            
             type="submit" 
             onClick={() => onRouteChange("home")} 
             value="Sign in"/>
             </div>
             <div className="lh-copy mt3 center">
-            <a href="#0"  onClick={() => onRouteChange("register")} className="f6 pointer link dim black db">Register</a>
+            <RegisterButton 
+                href="#0"  
+                onClick={() => onRouteChange("register")}>
+                    Register
+            </RegisterButton>
 
             </div>
         </div>
-        </main>
-        </article>
+        </Main>
+        </Section>
     )
 }
 

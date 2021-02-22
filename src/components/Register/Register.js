@@ -1,35 +1,64 @@
 import React from "react";
+import {InputField, 
+        Main, 
+        Fieldset,
+        Legend,
+        SubmitButton, 
+        Section, 
+        InputDataName} 
+        from "./Register.styles";
 
 const Register = ({onRouteChange}) => {
     return (
-        <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center register" >
-        <main className="pa4 black-80">
+        <Section >
+        <Main >
         <form className="measure ">
-            <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f4 fw6 ph0 mh0">Register</legend>
+            <Fieldset id="sign_up">
+            <Legend>
+                 Register
+            </Legend>
              <div className="mt3">
-                <label className="db fw6 lh-copy f6" for="email-address">Name</label>
-                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="text" name="name"  id="name"/>
+                <InputDataName 
+                htmlFor="email-address">
+                  Name
+                </InputDataName>
+                <InputField 
+                type="text" 
+                name="name"  
+                id="name"/>
             </div>
             <div className="mt3">
-                <label className="db fw6 lh-copy f6" for="email-address">Email</label>
-                <input className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="email" name="email-address"  id="email-address"/>
+                <InputDataName 
+                htmlFor="email-address">
+                   Email
+                </InputDataName>
+                <InputField 
+                type="email" 
+                name="email-address"  
+                id="email-address"/>
             </div>
             <div className="mv3">
-                <label className="db fw6 lh-copy f6" for="password">Password</label>
-                <input className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" type="password" name="password"  id="password"/>
+                <InputDataName 
+                htmlFor="password">
+                    Password
+                </InputDataName>
+                <InputField 
+                type="password" 
+                name="password"  
+                id="password"/>
             </div>
  
-            </fieldset>
-            <div className="center">
-            <input className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+            </Fieldset>
+            <div 
+            className="center">
+            <SubmitButton
             onClick={() => onRouteChange("home")}
             type="submit" 
             value="Sign up"/>
             </div>
         </form>
-        </main>
-        </article>
+        </Main>
+        </Section>
     )
 }
 

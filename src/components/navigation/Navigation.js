@@ -1,28 +1,29 @@
 import React from "react";
+import {Option, OptionButton} from "./Navigation.styles";
 
 const Navigation = ({signOff, isSignedIn}) => {
         if(isSignedIn) {
         return (<div>
-            <nav style={{display: "flex", justifyContent: "flex-end"}}>
-                <p className="f3 link dim black underline pa3 pointer"
+            <Option>
+                <OptionButton
                 onClick={() => signOff("signin")}
-                >Sign out</p>
+                >Sign out</OptionButton>
 
-            </nav>
+            </Option>
         </div>);
         }
         else {
         return (
             <div>
-            <nav style={{display: "flex", justifyContent: "flex-end"}}>
-            <p className="f3 link dim black underline pa3 pointer"
+            <Option>
+            <OptionButton
             onClick={() => signOff("signin")}
-            >Sign in</p>
-            <p className="f3 link dim black underline pa3 pointer"
+            >Sign in</OptionButton>
+            <OptionButton
             onClick={() => signOff("register")}
-            >Register</p>
+            >Register</OptionButton>
         
-             </nav>
+             </Option>
              </div>)
         }
 

@@ -93,6 +93,12 @@ class App extends Component {
     if (route === "signout") {
       this.setState({isSignedIn: false})
     }
+    else if (route === "register") {
+      this.setState({isSignedIn: false})
+    }
+    if (route === "signin") {
+      this.setState({isSignedIn: false})
+    }
     // else if (route === "register") {
     //   this.setState({isSignedIn: false})
     // }
